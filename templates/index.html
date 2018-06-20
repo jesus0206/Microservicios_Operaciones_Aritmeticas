@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculadora</title>
+        <!-- Bootstrap Core CSS -->
+        <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="../static/css/stylish-portfolio.css" rel="stylesheet">
+
+        <link href="../static/css/estilos.css" rel="stylesheet">
+        <!-- Custom Fonts -->
+        <link href="../static/font-awesome/css/font-awesome.min.css"
+              rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+              rel="stylesheet" type="text/css">
+    
+</head>
+<body>
+<h1>MICROSERVICIOS CALCULADORA</h1>
+<button class="btn btn-primary" name="0">SUMA</button>
+<button class="btn btn-primary" name="1">RESTA</button>
+<button class="btn btn-primary" name="2">MULTIPLICACION</button>
+<button class="btn btn-primary" name="3">DIVISION</button>
+<button class="btn btn-primary" name="4">GENERAL</button>
+<div class="suma">
+    <h1 class="font-weight-normal">Formualrio Suma</h1>
+    <form action="/suma">
+        <label for="" class="col-sm-2 col-form-label">N1:</label>
+        <input type="text" name="n1" class="form-control"><br>
+        <label for="" class="col-sm-2 col-form-label">N2:</label>
+        <input type="text" name="n2" class="form-control"><br>
+        <input type="submit" value="Calcular Suma" class="btn btn-lg">
+    </form>
+</div>
+<div class="resta">
+    <h1 class="font-weight-normal">Formulario Resta</h1>
+    <form action="/resta">
+        <label for="" class="col-sm-2 col-form-label">N1:</label>
+        <input type="text" name="n1" class="form-control"><br>
+        <label for="" class="col-sm-2 col-form-label">N2:</label>
+        <input type="text" name="n2" class="form-control"><br>
+        <input type="submit" value="Calcular Resta" class="btn btn-lg">
+    </form>
+</div>
+<div class="multiplicacion">
+    <h1>Formulario Multiplicacion</h1>
+    <form action="/multiplicacion">
+        <label for="" class="col-sm-2 col-form-label">N1:</label>
+        <input type="text" name="n1" class="form-control"><br>
+        <label for="" class="col-sm-2 col-form-label">N2:</label>
+        <input type="text" name="n2" class="form-control"><br>
+        <input type="submit" value="Calcular Multiplicacion" class="btn btn-lg">
+    </form> 
+</div>
+<div class="division">
+    <h1>Formulario Division</h1>
+    <form action="/division">
+        <label for="" class="col-sm-2 col-form-label">N1:</label>
+        <input type="text" name="n1" class="form-control"><br>
+        <label for="" class="col-sm-2 col-form-label">N2:</label>
+        <input type="text" name="n2" class="form-control"><br>
+        <input type="submit" value="Calcular Division" class="btn btn-lg">
+    </form>
+</div>
+<div class="general">
+        <h1>Formulario General</h1>
+        <form action="/calcular">
+            <label for="" class="col-sm-2 col-form-label">N1:</label>
+            <input type="text" name="n1" class="form-control"><br>
+            <label for="" class="col-sm-2 col-form-label">N2:</label>
+            <input type="text" name="n2" class="form-control"><br>
+            <input type="submit" value="Calcular" class="btn btn-lg">
+        </form>
+    </div>
+</body>
+
+<script src="../static/js/app.js"></script>
+</html>
