@@ -1,4 +1,5 @@
 var div,button;
+
 window.onload=function(){
     div=document.getElementsByTagName('div');
     button=document.getElementsByTagName('button');

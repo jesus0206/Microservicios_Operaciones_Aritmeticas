@@ -7,9 +7,27 @@
     <title>Document</title>
 </head>
 <body>
-    <label for="">Resulltado Suma:{{result.suma['resultado']}}</label><br>
-    <label for="">Resulltado Resta:{{result.resta['resultado']}}</label><br>
-    <label for="">Resulltado Multiplicacion:{{result.multiplicacion['resultado']}}</label><br>
-    <label for="">Resulltado Division:{{result.division['resultado']}}</label><br>
+    <h1 class="{{result.suma['display']}}">Resulltado Suma:{{result.suma['resultado']}}</h1><br>
+    <h1 class="{{result.resta['display']}}">Resulltado Resta:{{result.resta['resultado']}}</h1><br>
+    <h1 class="{{result.multiplicacion['display']}}">Resulltado Multiplicacion:{{result.multiplicacion['resultado']}}</h1><br>
+    <h1 class="{{result.division['display']}}">Resulltado Division:{{result.division['resultado']}}</h1><br>
 </body>
+<script>
+        var hidden;
+        window.onload=function(){
+            hidden=this.document.querySelectorAll('h1');
+            for (let index = 0; index < hidden.length; index++) {
+                if(hidden[index].className!="")
+                hidden[index].innerHTML="Micro-Servicio '"+opcion(index)+"' no se encuentra disponible"
+            }
+              let h1=document.createElement('h1');
+              h1.innerHTML="El Micro-Servicio no se encuentra disponible"; 
+        }
+        function opcion(index){
+            if(index==0)return 'SUMA'
+            if(index==1)return 'RESTA'
+            if(index==2)return 'MULTIPLICACION'
+            if(index==3)return 'DIVISION'
+        }
+    </script>
 </html>

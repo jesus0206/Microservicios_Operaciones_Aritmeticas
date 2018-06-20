@@ -20,6 +20,19 @@
   
 </head>
 <body>
-    <label for="">Resultado de Division {{result.division['resultado']}}</label>
+    <div class="{{result.division['display']}}">
+            <h1>Resultado de Division: {{result.division['resultado']}}</h1>
+    </div>
 </body>
+<script>
+        var hidden;
+        window.onload=function(){
+              hidden=this.document.querySelector('div');
+              let body=document.body;
+              let h1=document.createElement('h1');
+              h1.innerHTML="El Micro-Servicio division no se encuentra disponible"; 
+              if(hidden.className!="")
+              body.appendChild(h1);
+        }
+    </script>
 </html>
