@@ -29,7 +29,7 @@ Definición de las rutas con las que se comunica la GUI.
 '''
 
 app = Flask(__name__)
-
+json_result = {'suma': {}, 'resta': {}, 'multiplicacion': {},'division':{}}
 
 # Ruta que renderiza la pantalla principal del sistema.
 @app.route("/")
@@ -41,25 +41,23 @@ def operacion_sumar():
     # Solicitud al servicio sumar, por medio del API Gateway.
     url = 'http://localhost:8085/api/suma'
     response_omdb = requests.get(url, request.args)
-    json_result = {'omdb': {}, 'twitter': {}, 'no_results': {}}
     if response_omdb.status_code == 200:
-        json_result['omdb'] = response_omdb.json()
-        json_result['omdb']['display'] = ''
+        json_result['suma'] = response_omdb.json()
+        json_result['suma']['display'] = ''
     else:
-        json_result['omdb']['display'] = 'hidden'
-    return render_template("status.html", result=json_result)
+        json_result['suma']['display'] = 'hidden'
+    return render_template("suma.html", result=json_result)
 
 @app.route("/resta", methods=['GET'])
 def operacion_resta():
     # Solicitud al servicio sumar, por medio del API Gateway.
     url = 'http://localhost:8085/api/resta'
     response_omdb = requests.get(url, request.args)
-    json_result = {'omdb': {}, 'twitter': {}, 'no_results': {}}
     if response_omdb.status_code == 200:
-        json_result['omdb'] = response_omdb.json()
-        json_result['omdb']['display'] = ''
+        json_result['resta'] = response_omdb.json()
+        json_result['resta']['display'] = ''
     else:
-        json_result['omdb']['display'] = 'hidden'
+        json_result['resta']['display'] = 'hidden'
     return render_template("resta.html", result=json_result)
 
 @app.route("/multiplicacion", methods=['GET'])
@@ -67,12 +65,11 @@ def operacion_multi():
     # Solicitud al servicio sumar, por medio del API Gateway.
     url = 'http://localhost:8085/api/multiplicacion'
     response_omdb = requests.get(url, request.args)
-    json_result = {'omdb': {}, 'twitter': {}, 'no_results': {}}
     if response_omdb.status_code == 200:
-        json_result['omdb'] = response_omdb.json()
-        json_result['omdb']['display'] = ''
+        json_result['multiplicacion'] = response_omdb.json()
+        json_result['multiplicacion']['display'] = ''
     else:
-        json_result['omdb']['display'] = 'hidden'
+        json_result['multiplicacion']['display'] = 'hidden'
     return render_template("multi.html", result=json_result)
 
 
@@ -81,12 +78,11 @@ def operacion_div():
     # Solicitud al servicio sumar, por medio del API Gateway.
     url = 'http://localhost:8085/api/division'
     response_omdb = requests.get(url, request.args)
-    json_result = {'omdb': {}, 'twitter': {}, 'no_results': {}}
     if response_omdb.status_code == 200:
-        json_result['omdb'] = response_omdb.json()
-        json_result['omdb']['display'] = ''
+        json_result['division'] = response_omdb.json()
+        json_result['division']['display'] = ''
     else:
-        json_result['omdb']['display'] = 'hidden'
+        json_result['division']['display'] = 'hidden'
     return render_template("division.html", result=json_result)
 
 @app.route("/calcular", methods=['GET'])
@@ -95,7 +91,6 @@ def operacion_general():
 #division 
     url = 'http://localhost:8085/api/division'
     response_div = requests.get(url, request.args)
-    json_result = {'suma': {}, 'resta': {}, 'multiplicacion': {},'division':{}}
     if response_div.status_code == 200:
         json_result['division'] = response_div.json()
     else:

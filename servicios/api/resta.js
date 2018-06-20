@@ -7,7 +7,7 @@ app.get('/resta',function(req,res){
     let n2=req.query.n2;
     let resul=parseInt(n1)-parseInt(n2);
     console.log(resul)
-    res.send({resta:resul});
+    res.send({resultado:resul});
 });
 
 app.listen(8000,function(){

@@ -11,7 +11,7 @@ def resultado():
         n1 = request.args['n1']
         n2 = request.args['n2']
         s=int(n1)+int(n2)
-        resul = {'suma': s}
+        resul = {'resultado': s}
         return resul
 
 if __name__ == '__main__':
